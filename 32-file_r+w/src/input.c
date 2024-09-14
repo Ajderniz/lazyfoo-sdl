@@ -26,9 +26,7 @@ enum INPUT_State INPUT_handle(void)
 				break;
 			case SDL_SCANCODE_DOWN:
 				shared.current_data++;
-				if (TOTAL_DATA <= shared.current_data) {
-					shared.current_data = 0;
-				}
+				shared.current_data %= TOTAL_DATA;
 				break;
 			case SDL_SCANCODE_LEFT:
 				shared.data[shared.current_data]--;
